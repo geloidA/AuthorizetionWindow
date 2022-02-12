@@ -1,0 +1,75 @@
+﻿<Window x:Class="Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="450" Width="800">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFE3E0F1" Offset="0.016"/>
+                <GradientStop Color="#FF1448B6" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+
+            <Label Style="{StaticResource Label}">
+                Авторизация
+            </Label>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Style="{StaticResource Label}" FontSize="15">
+                    Логин
+                </Label>
+
+                <Label Grid.Row="1" Style="{StaticResource Label}" FontSize="15">
+                    Пароль
+                </Label>
+
+                <TextBox x:Name="tBLogin" Grid.Column="1" Style="{StaticResource TextBox}">
+                    
+                </TextBox>
+
+                <TextBox x:Name="tBPassword" Grid.Column="1" Grid.Row="1" Style="{StaticResource TextBox}">
+
+                </TextBox>
+            </Grid>
+
+            <Button x:Name="bLogin" Grid.Row="2" Style="{StaticResource Button}">
+                Войти
+            </Button>
+
+            <Button x:Name="bRegister" Grid.Row="3" Style="{StaticResource Button}">
+                Регистрация
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
