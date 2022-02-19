@@ -23,12 +23,13 @@ namespace Test
         {
             try
             {
-                using(var conn = new SqlConnection(connectionString))
+                var query = "select * from dbo.Аккаунты " +
+                        $"where dbo.Аккаунты.Login = {tBLogin.Text} " +
+                        $"and dbo.Аккаунты.Password = {tBPassword.Text}";
+                using (var conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    var command = new SqlCommand("select * from dbo.Аккаунты " +
-                        $"where dbo.Аккаунты.Login = {tBLogin.Text} " +
-                        $"and dbo.Аккаунты.Password = {tBPassword.Text}", conn);
+                    var command = new SqlCommand(query, conn);
                     var reader = command.ExecuteReader();
                     if (reader.HasRows)
                         while (reader.Read())

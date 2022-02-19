@@ -61,7 +61,7 @@
                 </TextBox>
             </Grid>
 
-            <Button Grid.Row="3" Style="{StaticResource Button}">
+            <Button x:Name="btRegistration" Grid.Row="3" Style="{StaticResource Button}">
                 Зарегистрироваться
             </Button>
         </Grid>
